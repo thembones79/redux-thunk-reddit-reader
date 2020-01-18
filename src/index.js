@@ -21,7 +21,13 @@ function reducer(state = initialState, action) {
         isLoading: true,
         error: null
       };
-    case "Get_POSTS_SUCCESS":
+    case "GET_POSTS_SUCCESS":
+      return {
+        ...state,
+        posts: action.posts,
+        isLoading: false
+      };
+    case "GET_POSTS_ERROR":
       return {
         ...state,
         isLoading: false,
